@@ -2,6 +2,7 @@ package backend.agricolas.controller;
 
 import backend.agricolas.model.Person;
 import backend.agricolas.service.PersonService;
+import backend.agricolas.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,8 @@ public class PersonController {
 
     @PostMapping("/addNewPerson")
     public Person addNewPerson(@RequestBody Person person) {
+        Utils utils = new Utils();
+        person.setPassword(utils.getEncodePassword(person.getPassword()));
         return personService.addNewPerson(person);
     }
 
