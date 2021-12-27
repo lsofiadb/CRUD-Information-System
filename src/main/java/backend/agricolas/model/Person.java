@@ -3,6 +3,7 @@ package backend.agricolas.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -24,4 +25,6 @@ public class Person {
     private Role role;
     @OneToOne(mappedBy = "person")
     private Location location;
+    @OneToMany(mappedBy = "person")
+    private List <ShoppingCart> shoppingCarts;
 }
