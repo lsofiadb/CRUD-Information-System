@@ -1,12 +1,16 @@
 package backend.agricolas.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "location")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Location {
     @Id @Column(name = "id") @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

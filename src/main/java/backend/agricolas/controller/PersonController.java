@@ -18,7 +18,7 @@ public class PersonController {
     @PostMapping("/addNewPerson")
     public Person addNewPerson(@RequestBody Person person) {
         Utils utils = new Utils();
-        person.setPassword(utils.getEncodePassword(person.getPassword()));
+        person.setPassword(utils.getEncodedPassword(person.getPassword()));
         return personService.addNewPerson(person);
     }
 

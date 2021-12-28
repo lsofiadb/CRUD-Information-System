@@ -1,6 +1,8 @@
 package backend.agricolas.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import java.util.List;
 @Entity
 @Table(name = "shopping_cart")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ShoppingCart {
     @Id @Column(name = "id") @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
