@@ -25,6 +25,8 @@ public class Inventory {
     private Farm farm;
     @ManyToOne @JoinColumn(name = "product_code")
     private Product product;
+    /*
     @OneToMany(mappedBy = "inventory")
     private List<ItemShoppingCart> itemShoppingCarts;
+     */
 }

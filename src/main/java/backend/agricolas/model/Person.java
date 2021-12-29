@@ -25,10 +25,12 @@ public class Person {
     private String email;
     @Column(name = "password")
     private String password;
-    @ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.EAGER) @JoinColumn(name = "role_id")
+    @ManyToOne @JoinColumn(name = "role_id")
     private Role role;
+    /*
     @OneToOne(mappedBy = "person")
     private Location location;
     @OneToMany(mappedBy = "person")
     private List <ShoppingCart> shoppingCarts;
+    */
 }

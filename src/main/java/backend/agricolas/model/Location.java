@@ -24,6 +24,8 @@ public class Location {
     private String details;
     @OneToOne @JoinColumn(name = "person_cc")
     private Person person;
+    /*
     @OneToOne(mappedBy = "location")
     private Farm farm;
+     */
 }

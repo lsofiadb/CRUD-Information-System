@@ -14,4 +14,7 @@ public class ShoppingCartService {
         return shoppingCartRepository.save(shoppingCart);
     }
 
+    public ShoppingCart findShoppingCartById(Long id){
+        return shoppingCartRepository.findShoppingCartById(id);
+    }
 }

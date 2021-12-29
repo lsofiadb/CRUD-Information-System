@@ -23,8 +23,10 @@ public class Farm {
     private double land_area;
     @OneToOne @JoinColumn(name = "location_id")
     private Location location;
+    /*
     @OneToMany(mappedBy = "farm")
     private List<ShoppingCart> shoppingCarts;
     @OneToMany(mappedBy = "farm")
     private List<Inventory> inventories;
+     */
 }

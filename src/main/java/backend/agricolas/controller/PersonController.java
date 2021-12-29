@@ -1,7 +1,9 @@
 package backend.agricolas.controller;
 
+import backend.agricolas.dto.PersonDto;
 import backend.agricolas.model.Person;
 import backend.agricolas.service.PersonService;
+import backend.agricolas.service.RoleService;
 import backend.agricolas.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/personController")
 public class PersonController {
     @Autowired
-    public PersonService personService;
+    private PersonService personService;
+
+    @Autowired
+    private RoleService roleService;
 
     @PostMapping("/addNewPerson")
-    public Person addNewPerson(@RequestBody Person person) {
+    public Person addNewPerson(@RequestBody PersonDto personDto) {
+        System.out.println("-----------EL ROL ES----------------------"+personDto.getRole_id());
         Utils utils = new Utils();
-        person.setPassword(utils.getEncodedPassword(person.getPassword()));
+        personDto.setPassword(utils.getEncodedPassword(personDto.getPassword()));
+        Person person = personDto.getPerson(personDto);
+        person.setRole(roleService.findRoleById(personDto.getRole_id()));
         return personService.addNewPerson(person);
     }
+
 
 }

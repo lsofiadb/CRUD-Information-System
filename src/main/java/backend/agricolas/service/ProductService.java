@@ -13,4 +13,8 @@ public class ProductService {
     public Product addNewProduct(Product product){
         return productRepository.save(product);
     }
+
+    public Product findProductByCode(Long code){
+        return productRepository.findProductByCode(code);
+    }
 }

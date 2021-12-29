@@ -13,4 +13,8 @@ public class FarmService {
     public Farm addNewFarm(Farm farm){
         return farmRepository.save(farm);
     }
+
+    public Farm findFarmById(Long id){
+        return farmRepository.findFarmById(id);
+    }
 }

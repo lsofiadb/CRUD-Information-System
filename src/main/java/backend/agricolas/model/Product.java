@@ -19,6 +19,8 @@ public class Product {
     private String name;
     @Column(name = "category")
     private String category;
+    /*
     @OneToMany(mappedBy = "product")
     private List<Inventory> inventories;
+     */
 }

@@ -25,7 +25,9 @@ public class ShoppingCart {
     private Farm farm;
     @ManyToOne @JoinColumn(name = "person_cc")
     private Person person;
+    /*
     @OneToMany(mappedBy = "shoppingCart")
     private List<ItemShoppingCart> itemShoppingCarts;
+     */
 
 }

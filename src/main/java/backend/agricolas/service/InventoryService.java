@@ -14,4 +14,7 @@ public class InventoryService {
     public Inventory addNewInventory(Inventory inventory){
         return inventoryRepository.save(inventory);
     }
+    public Inventory findInventoryById(Long id){
+        return inventoryRepository.findInventoryById(id);
+    }
 }
