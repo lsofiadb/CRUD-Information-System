@@ -17,4 +17,8 @@ public class FarmService {
     public Farm findFarmById(Long id){
         return farmRepository.findFarmById(id);
     }
+
+    public void deleteFarmById(Long id){
+        farmRepository.deleteById(id);
+    }
 }

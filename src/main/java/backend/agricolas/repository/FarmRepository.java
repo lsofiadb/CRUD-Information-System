@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FarmRepository extends JpaRepository<Farm,Long> {
     public Farm findFarmById(Long id);
-
+    public void deleteById(Long id);
 }
