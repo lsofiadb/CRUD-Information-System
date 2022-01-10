@@ -1,6 +1,7 @@
 package backend.agricolas.service;
 
 import backend.agricolas.model.Person;
+import backend.agricolas.model.Role;
 import backend.agricolas.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,10 @@ public class PersonService {
         personRepository.deleteById(cc);
     }
 
+    public List<Person> findPersonByRole(Role role) {
+        return personRepository.findPersonByRole(role);
+    }
+
     public Person updatePerson(Person person){
         return personRepository.save(person);
     }
@@ -34,5 +39,11 @@ public class PersonService {
         List <Person> personList = new ArrayList<>();
         personList = personRepository.findAll();
         return personList;
+    }
+
+    public void deletePersonsByRole(Role role){
+        for(Person p: findPersonByRole(role)){
+            personRepository.delete(p);
+        }
     }
 }
