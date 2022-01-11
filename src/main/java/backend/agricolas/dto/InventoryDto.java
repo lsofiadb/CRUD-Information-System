@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class InventoryDto {
+    private Long id;
     private Long stock;
     private double price;
     private String url_image;
@@ -13,6 +14,7 @@ public class InventoryDto {
 
     public Inventory getInventory(InventoryDto inventoryDto){
         Inventory inventory = new Inventory();
+        inventory.setId(inventoryDto.getId());
         inventory.setStock(inventoryDto.getStock());
         inventory.setPrice(inventoryDto.getPrice());
         inventory.setUrl_image(inventoryDto.getUrl_image());

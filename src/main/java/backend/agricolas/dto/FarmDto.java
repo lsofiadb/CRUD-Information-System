@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class FarmDto {
+    private Long id;
     private String name;
     private String url_image;
     private double land_area;
@@ -12,6 +13,7 @@ public class FarmDto {
 
     public Farm getFarm(FarmDto farmDto){
         Farm farm = new Farm();
+        farm.setId(farmDto.getId());
         farm.setName(farmDto.getName());
         farm.setUrl_image(farmDto.getUrl_image());
         farm.setLand_area(farmDto.getLand_area());
