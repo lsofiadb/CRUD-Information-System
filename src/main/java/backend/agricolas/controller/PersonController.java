@@ -21,7 +21,6 @@ public class PersonController {
 
     @PostMapping("/addNewPerson")
     public Person addNewPerson(@RequestBody PersonDto personDto) {
-        System.out.println("-----------EL ROL ES----------------------" + personDto.getRole_id());
         Utils utils = new Utils();
         personDto.setPassword(utils.getEncodedPassword(personDto.getPassword()));
         Person person = personDto.getPerson(personDto);
@@ -41,7 +40,11 @@ public class PersonController {
 
     @PutMapping("/updatePerson")
     public Person updatePerson(@RequestBody PersonDto personDto) {
-        return addNewPerson(personDto);
+        Utils utils = new Utils();
+        personDto.setPassword(utils.getEncodedPassword(personDto.getPassword()));
+        Person person = personDto.getPerson(personDto);
+        person.setRole(roleService.findRoleById(personDto.getRole_id()));
+        return personService.updatePerson(person);
     }
 
     @GetMapping("/findPersonByCC/{cc}")
