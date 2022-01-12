@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class ItemShoppingCartDto {
+    private Long id;
     private Long quantity;
     private double subtotal_price;
     private Long shopping_cart_id;
@@ -12,6 +13,7 @@ public class ItemShoppingCartDto {
 
     public ItemShoppingCart getItemShoppingCart(ItemShoppingCartDto itemShoppingCartDto){
         ItemShoppingCart itemShoppingCart = new ItemShoppingCart();
+        itemShoppingCart.setId(itemShoppingCartDto.getId());
         itemShoppingCart.setQuantity(itemShoppingCartDto.getQuantity());
         itemShoppingCart.setSubtotal_price(itemShoppingCartDto.getSubtotal_price());
         return itemShoppingCart;
