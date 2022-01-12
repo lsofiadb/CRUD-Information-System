@@ -8,6 +8,7 @@ import java.util.Date;
 
 @Data
 public class ShoppingCartDto {
+    private Long id;
     private Date date;
     private double total_price;
     private Long farm_id;
@@ -15,6 +16,7 @@ public class ShoppingCartDto {
 
     public ShoppingCart getShoppingCart(ShoppingCartDto shoppingCartDto){
         ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setId(shoppingCartDto.getId());
         shoppingCart.setDate(shoppingCartDto.getDate());
         shoppingCart.setTotal_price(shoppingCartDto.getTotal_price());
         return shoppingCart;
