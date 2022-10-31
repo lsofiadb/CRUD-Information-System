@@ -4,7 +4,7 @@
 Spring boot, PostgreSQL, Lombok, JPA, Java 17
 
 ## Objetive :telescope:
-This API Rest allows requests to the server through multiples endpoints. There are many entities which you could made a CRUD:
+This API Rest allows requests to the server through multiples endpoints. There are many entities which you could make CRUD operations:
 - Farm
 - Product
 - Location 
